@@ -163,3 +163,8 @@ Red            | Determinacion de camino y IP (Direccionamiento logico)         
                | (direccionar y rutear los mensajes host-to-host. Comunicar varias redes.)                                         |
 Enlace         | comunicacion entre entes directamente conectados. Comunicar una misma red. Acceso al Medio.                       |
 Fisica         | transportar la informacion como señal por el medio fisico. Caracteristicas fisicas. Informacion binaria, digital. |
+
+
+Cada SA se conecta a un router de borde o gateway, que lo conecta a otros. Se
+denominan EGP (Exterior Gateway Protocols) a los protocolos entre distintos AS
+(GGP, EGP, BGP).
