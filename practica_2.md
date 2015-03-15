@@ -172,7 +172,7 @@ con:
   1. La dirección de Internet del host www.redes.unlp.edu.ar
 
     ```bash
-      nslookup info.unlp.edu.ar # porque redes.unlp.edu.ar no existe, conchituma
+    nslookup info.unlp.edu.ar # porque redes.unlp.edu.ar no existe, conchituma!
     ```
     ```
     #=> Server:         192.168.43.1
@@ -187,22 +187,22 @@ con:
   2. La dirección de Internet o el hostname del servidor de DNS del dominio redes.unlp.edu.ar
 
     ```bash
-      dig info.unlp.edu.ar -t NS
+    dig info.unlp.edu.ar -t NS
     ```
     ```
-      #=> info.unlp.edu.ar.       85777   IN      NS      anubis.unlp.edu.ar.
-      #=> info.unlp.edu.ar.       85777   IN      NS      ada.info.unlp.edu.ar.
-      #=> info.unlp.edu.ar.       85777   IN      NS      mail.linti.unlp.edu.ar.
+    #=> info.unlp.edu.ar.       85777   IN      NS      anubis.unlp.edu.ar.
+    #=> info.unlp.edu.ar.       85777   IN      NS      ada.info.unlp.edu.ar.
+    #=> info.unlp.edu.ar.       85777   IN      NS      mail.linti.unlp.edu.ar.
     ```
 
   3. La dirección de Internet o el hostname del servidor de correo del dominio redes.unlp.edu.ar
     ```bash
-      dig info.unlp.edu.ar -t MX
+    dig info.unlp.edu.ar -t MX
     ```
     ```
-      ada.info.unlp.edu.ar.   86400   IN      MX      10 ada.info.unlp.edu.ar.
-      ada.info.unlp.edu.ar.   86400   IN      MX      20 anubis.unlp.edu.ar.
-      ada.info.unlp.edu.ar.   86400   IN      MX      30 mail.linti.unlp.edu.ar.
+    #=> ada.info.unlp.edu.ar.   86400   IN      MX      10 ada.info.unlp.edu.ar.
+    #=> ada.info.unlp.edu.ar.   86400   IN      MX      20 anubis.unlp.edu.ar.
+    #=> ada.info.unlp.edu.ar.   86400   IN      MX      30 mail.linti.unlp.edu.ar.
     ```
 
 12. Para realizar el siguiente ejercicio va a necesitar que el LiveCD tenga
@@ -213,13 +213,16 @@ Realice consultas de DNS para averiguar, ya sea con el comando dig, host o
 nslookup los siguientes datos:
 
   1. La cantidad de servidores de mail que aceptan correo para el dominio gmail.com: ¿___?
+
   ```bash
-    dig gmail.com MX
-    # => gmail.com.              1138    IN      MX      30 alt3.gmail-smtp-in.l.google.com.
-    # => gmail.com.              1138    IN      MX      10 alt1.gmail-smtp-in.l.google.com.
-    # => gmail.com.              1138    IN      MX      40 alt4.gmail-smtp-in.l.google.com.
-    # => gmail.com.              1138    IN      MX      20 alt2.gmail-smtp-in.l.google.com.
-    # => gmail.com.              1138    IN      MX      5 gmail-smtp-in.l.google.com.
+  dig gmail.com MX
+  ```
+  ```
+  #=> gmail.com.   1138    IN      MX      30 alt3.gmail-smtp-in.l.google.com.
+  #=> gmail.com.   1138    IN      MX      10 alt1.gmail-smtp-in.l.google.com.
+  #=> gmail.com.   1138    IN      MX      40 alt4.gmail-smtp-in.l.google.com.
+  #=> gmail.com.   1138    IN      MX      20 alt2.gmail-smtp-in.l.google.com.
+  #=> gmail.com.   1138    IN      MX      5 gmail-smtp-in.l.google.com.
   ```
   2. El nombre del servidor de correo principal de gmail.com.
 
@@ -229,7 +232,7 @@ nslookup los siguientes datos:
      ¿que sucede luego de que uno de estos servidores recibe un correo para un usuario del dominio,
      gmail.com en este caso?
 
-     - ni palida idea. ?????
+     > ni palida idea. ?????
 
   4. La cantidad de servidores de DNS del dominio unlp.edu.ar: ¿___?
 
@@ -238,51 +241,58 @@ nslookup los siguientes datos:
 13. ¿Qué función cumple en Linux/Unix el archivo /etc/hosts o en Windows el archivo
     \WINDOWS\system32\drivers\etc\hosts?
 
-14. Abra el programa Wireshark (as root) para comenzar a capturar el tráfico de red en la interfaz de
-Capa de Aplicación  Redes y comunicaciones ­ 2015
+14. Abra el programa Wireshark (as root) para comenzar a capturar el tráfico de
+red en la interfaz de loopback lo. una vez abierto realice una consulta DNS con
+el comando dig para averiguar el registro MX de redes.unlp.edu.ar y luego otra
+para averiguar los registros NS correspondientes a el dominio
+redes.unlp.edu.ar. Analice la información proporcionada por dig y comparelo con
+la captura.
 
-    loopback lo. una vez abierto realice una consulta DNS con el comando dig para averiguar el registro
-    MX de redes.unlp.edu.ar y luego otra para averiguar los registros NS correspondientes a el dominio
-    redes.unlp.edu.ar. Analice la información proporcionada por dig y comparelo con la captura.
+15. Dada la siguiente situación: "Una PC en una red determinada, con acceso a
+Internet, utiliza los servicios de DNS de un servidor de la red". Analice:
 
-15. Dada la siguiente situación: "Una PC en una red determinada, con acceso a Internet, utiliza los
-    servicios de DNS de un servidor de la red". Analice:
+  1. ¿Qué tipo de consultas (iterativas o recursivas) realiza la PC a su servidor de DNS?
 
-    a. ¿Qué tipo de consultas (iterativas o recursivas) realiza la PC a su servidor de DNS?
-    b. ¿Qué tipo de consultas (iterativas o recursivas) realiza el servidor de DNS para resolver
-
-        requerimientos de usuario como el anterior? ¿A quién le realiza estas consultas?
+  2. ¿Qué tipo de consultas (iterativas o recursivas) realiza el servidor de
+  DNS para resolver requerimientos de usuario como el anterior? ¿A quién le
+  realiza estas consultas?
 
 HTTP
+----
 
-16.Defina cada una de las siguientes entidades: Navegador, Servidor WEB, Página WEB, HTTP y URL.
-    ¿Cómo participa cada uno de ellas en la comunicación cliente WEB ­ servidor WEB?
+16. Defina cada una de las siguientes entidades: Navegador, Servidor WEB,
+Página WEB, HTTP y URL.  ¿Cómo participa cada uno de ellas en la comunicación
+cliente WEB ­ servidor WEB?
 
-17.¿Qué son y en qué se diferencian HTML y HTTP?
-18.Utilizando el Live CD, abra un navegador (Iceweasel). Utilizando el analizador de paquetes
+17. ¿Qué son y en qué se diferencian HTML y HTTP?
 
-    Wireshark (as root) capture los paquetes HTTP enviados y recibidos teniendo en cuenta:
-           Nota 1: capture los paquetes utilizando la interfaz de loopback lo. (Menú "Capture ->
-                Options". Luego seleccione la interfaz lo y presione Start)
-           Nota 2: Para que el analizador de red sólo nos muestre los mensajes del protocolo http
-                introduciremos la cadena `http' (sin las comillas) en la ventana de especificación de filtros de
-                visualización (display-filter). Si no hiciéramos ésto veríamos todo el tráfico de red que es
-                capaz de capturar nuestra placa de red, lo en este caso. De los paquetes que son
-                capturados, aquel que esté seleccionado será mostrado en forma detallada en la sección
-                que está justo debajo. Como sólo estamos interesados en http ocultaremos toda la
-                información que no es relevante para esta práctica (Información de trama, Ethernet, IP y
-                TCP). Desplegar la información correspondiente al protocolo HTTP bajo la leyenda
-                "Hipertext Transfer Protocol"
-           Nota 3: Para borrar la cache del navegador, deberá ir al menú "Herramientas-> Borrar
-                historial reciente". Alternativamente puede utilizar Ctrl+F5 en el navegador para forzar la
-                petición HTTP evitando el uso de cache del navegador .
-           Nota 4: En caso de querer ver de forma simplificada el contenido de una comunicación http,
-                utilice el botón derecho sobre un paquete HTTP perteneciente al flujo capturado y seleccione
-                la opción Follow TCP Stream.
+18. Utilizando el Live CD, abra un navegador (Iceweasel). Utilizando el
+analizador de paquetes Wireshark (as root) capture los paquetes HTTP enviados y
+recibidos teniendo en cuenta:
 
-        - Borrar la cache del navegador y luego, con la captura activada, visitar la URL:
-                     www.redes.unlp.edu.ar. Luego de un instante refresque la página utilizando F5 o el
-                     icono para recargar la misma.
+  ```
+  Nota 1: capture los paquetes utilizando la interfaz de loopback lo. (Menú "Capture ->
+  Options". Luego seleccione la interfaz lo y presione Start)
+  Nota 2: Para que el analizador de red sólo nos muestre los mensajes del protocolo http
+  introduciremos la cadena `http' (sin las comillas) en la ventana de especificación de filtros de
+  visualización (display-filter). Si no hiciéramos ésto veríamos todo el tráfico de red que es
+  capaz de capturar nuestra placa de red, lo en este caso. De los paquetes que son
+  capturados, aquel que esté seleccionado será mostrado en forma detallada en la sección
+  que está justo debajo. Como sólo estamos interesados en http ocultaremos toda la
+  información que no es relevante para esta práctica (Información de trama, Ethernet, IP y
+  TCP). Desplegar la información correspondiente al protocolo HTTP bajo la leyenda
+  "Hipertext Transfer Protocol"
+  Nota 3: Para borrar la cache del navegador, deberá ir al menú "Herramientas-> Borrar
+  historial reciente". Alternativamente puede utilizar Ctrl+F5 en el navegador para forzar la
+  petición HTTP evitando el uso de cache del navegador .
+  Nota 4: En caso de querer ver de forma simplificada el contenido de una comunicación http,
+  utilice el botón derecho sobre un paquete HTTP perteneciente al flujo capturado y seleccione
+  la opción Follow TCP Stream.
+  - Borrar la cache del navegador y luego, con la captura activada, visitar la URL:
+               www.redes.unlp.edu.ar. Luego de un instante refresque la página utilizando F5 o el
+               icono para recargar la misma.
+  ```
+
 
     a. ¿Cuántos requerimientos realizó el navegador? Para cada par de requerimiento/respuesta
         responda:
@@ -298,56 +308,73 @@ HTTP
          ¿Cuántas cabeceras viajaron en el respuesta?
          ¿Por qué en uno de los requerimientos está presente el encabezado "`If-Modified-Since"?
             (Relacionar con el código de la respuesta recibida).
-Capa de Aplicación  Redes y comunicaciones ­ 2015
-
          ¿Es posible extraer de la respuesta recibida la página que carga el navegador? Verifique en la
             captura los datos recibidos y compare con el código fuente de la página cargada.
 
-19.Utilizando el Live CD, abra un navegador (Iceweasel) e ingrese a la URL: www.redes.unlp.edu.ar/
-    a. Ingrese al link en la sección "Capa de Aplicación" llamado "Protocolos HTTP". En la página
-        mostrada se visualizan dos nuevos links llamados: Protocolo HTTP/1.1 y Protocolo HTTP/1.0.
-        Antes de ingresar a estos links continúe con el siguiente punto.
-    b. Utilizando el analizador de paquetes Wireshark capture los paquetes enviados y recibidos al
-        presionar sobre el link.
-    c. Explique la diferencia entre la versión HTTP 1.0 y la versión HTTP 1.1
+19. Utilizando el Live CD, abra un navegador (Iceweasel) e ingrese a la URL:
+www.redes.unlp.edu.ar/
 
-20.Utilizando el Live CD, abra un navegador en ingrese a la URL: www.redes.unlp.edu.ar/
-    a. Ingrese al link en la sección "Capa de Aplicación" llamado "Métodos HTTP". En la página
-        mostrada se visualizan dos nuevos links llamados: Método GET y Método POST. Ambos muestran
-        un formulario como el siguiente:
+  1. Ingrese al link en la sección "Capa de Aplicación" llamado "Protocolos
+  HTTP". En la página mostrada se visualizan dos nuevos links llamados:
+  Protocolo HTTP/1.1 y Protocolo HTTP/1.0.  Antes de ingresar a estos links
+  continúe con el siguiente punto.
 
-    b. Analice el código HTML.
-    c. Utilizando el analizador de paquetes Wireshark capture los paquetes enviados y recibidos al
+  2. Utilizando el analizador de paquetes Wireshark capture los paquetes
+  enviados y recibidos al presionar sobre el link.
 
-        presionar el botón Enviar.
-    d. ¿Qué diferencias detectó en los mensajes enviados por el cliente?
-    e. ¿Observó alguna diferencia en el browser si se utiliza un mensaje u otro?
-21. Investigue para qué puede ser utilizado el comando curl. Con el mismo, determine la versión del
-    servidor web que sirve el sitio https://www.google.com/. ¿Qué parámetros del comando utilizó?
+  3. Explique la diferencia entre la versión HTTP 1.0 y la versión HTTP 1.1
+
+20. Utilizando el Live CD, abra un navegador en ingrese a la URL:
+www.redes.unlp.edu.ar/
+
+  1. Ingrese al link en la sección "Capa de Aplicación" llamado "Métodos
+  HTTP". En la página mostrada se visualizan dos nuevos links llamados:
+  Método GET y Método POST. Ambos muestran un formulario como el siguiente:
+
+  2. Analice el código HTML.
+
+  3. Utilizando el analizador de paquetes Wireshark capture los paquetes
+  enviados y recibidos al presionar el botón Enviar.
+
+  4. ¿Qué diferencias detectó en los mensajes enviados por el cliente?
+
+  5. ¿Observó alguna diferencia en el browser si se utiliza un mensaje u otro?
+
+21. Investigue para qué puede ser utilizado el comando curl. Con el mismo,
+determine la versión del servidor web que sirve el sitio
+https://www.google.com/. ¿Qué parámetros del comando utilizó?
+
 22. Relacione DNS con HTTP. ¿Se puede navegar si no hay servicio de DNS?
 
 SMTP, POP e IMAP
+----------------
 
-23.¿Qué protocolos se utilizan para el envío y la recepción de mails?
-24.¿Qué protocolos se utilizan para la recepción de mails? Enumere y explique caracteristicas y
+23. ¿Qué protocolos se utilizan para el envío y la recepción de mails?
 
-    diferencias entre las alternativas posibles.
-25.Utilizando el Live CD, abra el cliente de correo (Icedove) y configure:
+24. ¿Qué protocolos se utilizan para la recepción de mails? Enumere y explique
+caracteristicas y diferencias entre las alternativas posibles.
 
-    a. Una cuenta de correo POP (Omitir advertencia por uso de conexión sin cifrado)
-         Cuenta de correo: alumnopop@redes.unlp.edu.ar
-         Nombre de usuario: alumnopop
-         Contraseña: alumnopoppass
-         Servidor de correo POP: mail.redes.unlp.edu.ar
-         Servidor de correo saliente (SMTP): mail.redes.unlp.edu.ar
+25. Utilizando el Live CD, abra el cliente de correo (Icedove) y configure:
 
-    b. Una cuenta de correo IMAP (Omitir advertencia por uso de conexión sin cifrado)
-         Cuenta de correo: alumnoimap@redes.unlp.edu.ar
-         Nombre de usuario: alumnoimap
-         Contraseña: alumnoimappass
-Capa de Aplicación  Redes y comunicaciones ­ 2015
+  1. Una cuenta de correo POP (Omitir advertencia por uso de conexión sin cifrado)
 
-       Servidor de correo IMAP: mail.redes.unlp.edu.ar
+  ```
+  Cuenta de correo: alumnopop@redes.unlp.edu.ar
+  Nombre de usuario: alumnopop
+  Contraseña: alumnopoppass
+  Servidor de correo POP: mail.redes.unlp.edu.ar
+  Servidor de correo saliente (SMTP): mail.redes.unlp.edu.ar
+  ```
+
+  2. Una cuenta de correo IMAP (Omitir advertencia por uso de conexión sin cifrado)
+
+  ```
+  Cuenta de correo: alumnoimap@redes.unlp.edu.ar
+  Nombre de usuario: alumnoimap
+  Contraseña: alumnoimappass
+  Servidor de correo IMAP: mail.redes.unlp.edu.ar
+  ```
+
 Nota: Luego de autoconfigurar automáticamente una cuenta pop o imap, el envío de mails se
 auto configura para realizarse vía SMTP con autenticación. Para poder enviar mails es
 necesario sacar la opcion de autenticación en los servidores de correo saliente (Editar
