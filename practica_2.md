@@ -264,7 +264,52 @@ HTTP
 Página WEB, HTTP y URL.  ¿Cómo participa cada uno de ellas en la comunicación
 cliente WEB ­ servidor WEB?
 
+  - Navegador:
+
+    > Es una aplicación que opera a través de Internet, interpretando la
+    > información de archivos y sitios web para que podamos ser capaces de
+    > leerla, (ya se encuentre ésta alojada en un servidor dentro de la World
+    > Wide Web o en un servidor local).  Es la aplicación en el host cliente que
+    > pide los objetos al host servidor.
+
+  - Servidor web:
+
+    > Almacena documentos HTML, imágenes, archivos de texto, escrituras, y demás
+    > material Web compuesto por datos (conocidos colectivamente como contenido),
+    > y distribuye este contenido a clientes que la piden en la red. Es donde se
+    > almacenan los objetos que piden los hosts clientes.
+
+  - Página web:
+
+    > Documento o información electrónica adaptada para la World Wide Web y que
+    > puede ser accedida mediante un navegador para mostrarse en un monitor de
+    > computadora o dispositivo móvil. Es almacenada en el servidor y transferida
+    > hacia el cliente.
+
+  - HTTP (Hypertext Transfer Protocol):
+
+    > Es el protocolo usado en cada transacción de la World Wide Web. Es un
+    > protocolo orientado a transacciones y sigue el esquema petición-respuesta
+    > entre un cliente y un servidor.
+
+  - URL (Uniform Resource Locator):
+
+    > Es una secuencia de caracteres, de acuerdo a un formato modélico y
+    > estándar, que usa para nombrar recursos en Internet para su localización o
+    > identificación, como por ejemplo documentos textuales, imágenes, vídeos,
+    > presentaciones, presentaciones digitales, etc.
+
 17. ¿Qué son y en qué se diferencian HTML y HTTP?
+
+  > HTML es el lenguaje de marcado predominante para la elaboración de páginas
+  > web. Es usado para describir la estructura y el contenido en forma de
+  > texto, así como para complementar el texto con objetos tales como imágenes.
+  > Como se explicó en el punto anterior HTTP es un protocolo.
+  > HTML y HTTP son cosas diferentes, uno es un lenguaje que define un formato
+  > y el otro es un protocolo de transferencia de objetos. HTTP puede usarse
+  > para transferir archivos HTML así como otros tipos de archivos como
+  > multimedia o texto. HTML puede ser transferido por otros protocolos además
+  > de HTTP, pero en el caso de la web este es el protocolo utilizado.
 
 18. Utilizando el Live CD, abra un navegador (Iceweasel). Utilizando el
 analizador de paquetes Wireshark (as root) capture los paquetes HTTP enviados y
