@@ -118,53 +118,45 @@ oficina “Ventas”
 
 12. ¿Cómo se llama la PDU de cada una de las capas del stack TCP/IP?
 
-PDU: Protocol Data Unit
 
- Capa        |  PDU
--------------------
-*Aplicacion  | Mensajes
-*Transporte  | Segmento
- Red         |    Datagrama
-#Enlace      |  Marco
-#Fisica      |    PDU-1   
-
-* Software   |#Hardware             
+   Capa        |  PDU
+  -------------+--------------
+  Aplicacion   | Mensajes
+  Transporte   | Segmento
+  Red          | Datagrama
+  Enlace       | Marco
+  Fisica       | PDU-1   
 
 13. Describa cuales son las funciones de cada una de las capas del stack TCP/IP
 o protocolo de Internet.
 
-Modelo TCP/IP
-
-Capa         | Funcion
-----------------------
-Aplicacion   | Network process to application
-             | Representacion de datos y encripcion
-             | Comunicacion entre hosts
----------------------------------------
-Transporte   | Conexion entre terminales y fiabilidad
------------------------------------------------------
-Internet/Red | Determinacion de camino y IP (Direccionamiento logico)
---------------------------------------------------
-Acceso a Red | MAC y LLC (Direccionamiento fisico)
-             | Transimision binaria.
+  Capa         | Funcion
+  -------------+-------------------------------------------------------
+  Aplicacion   | Network process to application
+               | Representacion de datos y encripcion
+               | Comunicacion entre hosts
+  Transporte   | Conexion entre terminales y fiabilidad
+  Internet/Red | Determinacion de camino y IP (Direccionamiento logico)
+  Acceso a Red | MAC y LLC (Direccionamiento fisico)
+               | Transimision binaria.
 
 14. Compare el modelo OSI con la implementación TCP/IP.
 
-Modelo OSI
-
-Capa           | Funcion
----------------|-------------------------------------------------------------------------------------------------------------------|-------------------------------------------------
-Aplicacion     | servicios de red a los usuarios y a procesos, aplicaciones.                                                       |
-Presentation   | Representacion de datos y encripcion (formato de los datos.)                                                      |
-Sesion         | Comunicacion entre hosts (mantener track de sesiones de la aplicacion.)                                           |
-Transporte     | Conexion entre terminales y fiabilidad                                                                            | proveen envio de datos de forma confiable.
----------------|-------------------------------------------------------------------------------------------------------------------|--------------------------------------------
-Red            | Determinacion de camino y IP (Direccionamiento logico)                                                            | controlan el envio fisico de los mensajes sobre la red.
-               | (direccionar y rutear los mensajes host-to-host. Comunicar varias redes.)                                         |
-Enlace         | comunicacion entre entes directamente conectados. Comunicar una misma red. Acceso al Medio.                       |
-Fisica         | transportar la informacion como señal por el medio fisico. Caracteristicas fisicas. Informacion binaria, digital. |
+  Capa           | Funcion
+  ---------------+-------------------------------------------------------------------------------------------------------------------+-------------------------------------------------
+  Aplicacion     | servicios de red a los usuarios y a procesos, aplicaciones.                                                       |
+  Presentation   | Representacion de datos y encripcion (formato de los datos.)                                                      |
+  Sesion         | Comunicacion entre hosts (mantener track de sesiones de la aplicacion.)                                           |
+  Transporte     | Conexion entre terminales y fiabilidad                                                                            | proveen envio de datos de forma confiable.
+  Red            | Determinacion de camino y IP (Direccionamiento logico)                                                            | controlan el envio fisico de los mensajes sobre la red.
+                 | (direccionar y rutear los mensajes host-to-host. Comunicar varias redes.)                                         |
+  Enlace         | comunicacion entre entes directamente conectados. Comunicar una misma red. Acceso al Medio.                       |
+  Fisica         | transportar la informacion como señal por el medio fisico. Caracteristicas fisicas. Informacion binaria, digital. |
 
 
-Cada SA se conecta a un router de borde o gateway, que lo conecta a otros. Se
-denominan EGP (Exterior Gateway Protocols) a los protocolos entre distintos AS
-(GGP, EGP, BGP).
+Extra
+-----
+
+  - Cada SA se conecta a un router de borde o gateway, que lo conecta a otros.
+  - Se denominan EGP (Exterior Gateway Protocols) a los protocolos entre
+  - distintos AS (GGP, EGP, BGP).

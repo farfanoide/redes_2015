@@ -226,7 +226,7 @@ nslookup los siguientes datos:
   ```
   2. El nombre del servidor de correo principal de gmail.com.
 
-    > gmail-smtp-in.l.google.com
+  > gmail-smtp-in.l.google.com
 
   3. ¿En que ocasión los demás servidores de correo recibirían correos dirigidos al dominio gmail.com?
      ¿que sucede luego de que uno de estos servidores recibe un correo para un usuario del dominio,
@@ -316,45 +316,66 @@ analizador de paquetes Wireshark (as root) capture los paquetes HTTP enviados y
 recibidos teniendo en cuenta:
 
   ```
-  Nota 1: capture los paquetes utilizando la interfaz de loopback lo. (Menú "Capture ->
-  Options". Luego seleccione la interfaz lo y presione Start)
-  Nota 2: Para que el analizador de red sólo nos muestre los mensajes del protocolo http
-  introduciremos la cadena `http' (sin las comillas) en la ventana de especificación de filtros de
-  visualización (display-filter). Si no hiciéramos ésto veríamos todo el tráfico de red que es
-  capaz de capturar nuestra placa de red, lo en este caso. De los paquetes que son
-  capturados, aquel que esté seleccionado será mostrado en forma detallada en la sección
-  que está justo debajo. Como sólo estamos interesados en http ocultaremos toda la
-  información que no es relevante para esta práctica (Información de trama, Ethernet, IP y
-  TCP). Desplegar la información correspondiente al protocolo HTTP bajo la leyenda
-  "Hipertext Transfer Protocol"
-  Nota 3: Para borrar la cache del navegador, deberá ir al menú "Herramientas-> Borrar
-  historial reciente". Alternativamente puede utilizar Ctrl+F5 en el navegador para forzar la
-  petición HTTP evitando el uso de cache del navegador .
-  Nota 4: En caso de querer ver de forma simplificada el contenido de una comunicación http,
-  utilice el botón derecho sobre un paquete HTTP perteneciente al flujo capturado y seleccione
-  la opción Follow TCP Stream.
-  - Borrar la cache del navegador y luego, con la captura activada, visitar la URL:
-               www.redes.unlp.edu.ar. Luego de un instante refresque la página utilizando F5 o el
-               icono para recargar la misma.
+
+  Nota 1: capture los paquetes utilizando la interfaz de loopback lo. (Menú
+  "Capture -> Options". Luego seleccione la interfaz lo y presione Start)
+
+  Nota 2: Para que el analizador de red sólo nos muestre los mensajes del
+  protocolo http introduciremos la cadena `http' (sin las comillas) en la
+  ventana de especificación de filtros de visualización (display-filter). Si no
+  hiciéramos ésto veríamos todo el tráfico de red que es capaz de capturar
+  nuestra placa de red, lo en este caso. De los paquetes que son capturados,
+  aquel que esté seleccionado será mostrado en forma detallada en la sección
+  que está justo debajo. Como sólo estamos interesados en http ocultaremos toda
+  la información que no es relevante para esta práctica (Información de trama,
+  Ethernet, IP y TCP). Desplegar la información correspondiente al protocolo
+  HTTP bajo la leyenda "Hipertext Transfer Protocol"
+
+  Nota 3: Para borrar la cache del navegador, deberá ir al menú "Herramientas->
+  Borrar historial reciente". Alternativamente puede utilizar Ctrl+F5 en el
+  navegador para forzar la petición HTTP evitando el uso de cache del
+  navegador.
+
+  Nota 4: En caso de querer ver de forma simplificada el contenido de una
+  comunicación http, utilice el botón derecho sobre un paquete HTTP
+  perteneciente al flujo capturado y seleccione la opción Follow TCP Stream.
+
+  - Borrar la cache del navegador y luego, con la captura activada, visitar la
+  - URL: www.redes.unlp.edu.ar. Luego de un instante refresque la página
+  - utilizando F5 o el icono para recargar la misma.
+
   ```
 
 
-    a. ¿Cuántos requerimientos realizó el navegador? Para cada par de requerimiento/respuesta
-        responda:
-         ¿Qué versión de http emplea tu navegador?
-         ¿Qué versión de http ejecuta el servidor?
-         ¿Qué idiomas indica tu navegador al servidor que está dispuesto aceptar en la respuesta?
-         ¿Qué recurso solicitó?
-         ¿Cuándo fue modificado por última vez el recurso solicitado?
-         ¿Qué método utilizó: (GET/POST)?
-         ¿Cuántas cabeceras viajaron en el requerimiento?
-         ¿Cuál es el código de estado devuelto a tu navegador por el servidor en la respuesta? ¿Cuál es
-            el significado de ese código de estado?
-         ¿Cuántas cabeceras viajaron en el respuesta?
-         ¿Por qué en uno de los requerimientos está presente el encabezado "`If-Modified-Since"?
-            (Relacionar con el código de la respuesta recibida).
-         ¿Es posible extraer de la respuesta recibida la página que carga el navegador? Verifique en la
-            captura los datos recibidos y compare con el código fuente de la página cargada.
+  1. ¿Cuántos requerimientos realizó el navegador? Para cada par de
+  requerimiento/respuesta responda:
+
+    - ¿Qué versión de http emplea tu navegador?
+
+    - ¿Qué versión de http ejecuta el servidor?
+
+    - ¿Qué idiomas indica tu navegador al servidor que está dispuesto aceptar
+      en la respuesta?
+
+    - ¿Qué recurso solicitó?
+
+    - ¿Cuándo fue modificado por última vez el recurso solicitado?
+
+    - ¿Qué método utilizó: (GET/POST)?
+
+    - ¿Cuántas cabeceras viajaron en el requerimiento?
+
+    - ¿Cuál es el código de estado devuelto a tu navegador por el servidor en
+      la respuesta? ¿Cuál es el significado de ese código de estado?
+
+    - ¿Cuántas cabeceras viajaron en el respuesta?
+
+    - ¿Por qué en uno de los requerimientos está presente el encabezado
+      `If-Modified-Since`? (Relacionar con el código de la respuesta recibida).
+
+    - ¿Es posible extraer de la respuesta recibida la página que carga el
+      navegador? Verifique en la captura los datos recibidos y compare con el
+      código fuente de la página cargada.
 
 19. Utilizando el Live CD, abra un navegador (Iceweasel) e ingrese a la URL:
 www.redes.unlp.edu.ar/
@@ -401,7 +422,8 @@ caracteristicas y diferencias entre las alternativas posibles.
 
 25. Utilizando el Live CD, abra el cliente de correo (Icedove) y configure:
 
-  1. Una cuenta de correo POP (Omitir advertencia por uso de conexión sin cifrado)
+  1. Una cuenta de correo POP (Omitir advertencia por uso de conexión sin
+  cifrado)
 
   ```
   Cuenta de correo: alumnopop@redes.unlp.edu.ar
@@ -411,7 +433,8 @@ caracteristicas y diferencias entre las alternativas posibles.
   Servidor de correo saliente (SMTP): mail.redes.unlp.edu.ar
   ```
 
-  2. Una cuenta de correo IMAP (Omitir advertencia por uso de conexión sin cifrado)
+  2. Una cuenta de correo IMAP (Omitir advertencia por uso de conexión sin
+  cifrado)
 
   ```
   Cuenta de correo: alumnoimap@redes.unlp.edu.ar
@@ -420,66 +443,80 @@ caracteristicas y diferencias entre las alternativas posibles.
   Servidor de correo IMAP: mail.redes.unlp.edu.ar
   ```
 
-Nota: Luego de autoconfigurar automáticamente una cuenta pop o imap, el envío de mails se
-auto configura para realizarse vía SMTP con autenticación. Para poder enviar mails es
-necesario sacar la opcion de autenticación en los servidores de correo saliente (Editar
-Configuración de cuentas  configuración del servidor saliente  editar  destildar la
-opción "usar nombre y contraseña"
+  ```
+  Nota: Luego de autoconfigurar automáticamente una cuenta pop o imap, el envío
+  de mails se auto configura para realizarse vía SMTP con autenticación. Para
+  poder enviar mails es necesario sacar la opcion de autenticación en los
+  servidores de correo saliente (Editar Configuración de cuentas  configuración
+  del servidor saliente  editar  destildar la opción "usar nombre y contraseña"
+  ```
 
-  c. Envíe un email desde el cliente de una cuenta a la otra y luego chequee el correo de ambas
-      cuentas.
-      Enviando mails (Analizando SMTP):
+  3. Envíe un email desde el cliente de una cuenta a la otra y luego chequee el
+  correo de ambas cuentas.  Enviando mails (Analizando SMTP):
 
-  d. Reitere el proceso de envío, esta vez capturando los paquetes de protocolo SMTP utilizando
-      Wireshark. Analice el intercambio del protocolo entre el cliente y el servidor, identificando cada
-      comando y su correspondiente respuesta, realice un gráfico que muestre este intercambio.
+  4. Reitere el proceso de envío, esta vez capturando los paquetes de protocolo
+  SMTP utilizando Wireshark. Analice el intercambio del protocolo entre el
+  cliente y el servidor, identificando cada comando y su correspondiente
+  respuesta, realice un gráfico que muestre este intercambio.
 
-  e. Desde una terminal, utilice los comandos del protocolo SMTP observados en el punto anterior,
-      para enviar un mail al servidor en forma manual.
-         Nota 1: para conectarse al servidor deberá utilizar el comando:
-                                                    telnet mail.redes.unlp.edu.ar 25
-         Nota 2: Verifique que haya recibido el correo en la cuenta a la que haya enviado el correo
-              desde la consola.
+  5. Desde una terminal, utilice los comandos del protocolo SMTP observados en
+  el punto anterior, para enviar un mail al servidor en forma manual.
 
-  f. Repita este procedimiento utilizando una cuenta diferente de mail para el campo From:, luego
-      verifique que el correo recibido por el destinatario tenga la cuenta ficticia.
-      Recibiendo mails (Analizando POP e IMAP):
+    ```
+    Nota 1: para conectarse al servidor deberá utilizar el comando: telnet
+    mail.redes.unlp.edu.ar 25
+    ```
+    ```
+    Nota 2: Verifique que haya recibido el correo en la cuenta a la que haya
+    enviado el correo desde la consola.
+    ```
 
-  g. Vuelva a enviar un correo a alumnopop@redes.unlp.edu.ar utilizando el cliente de correo
-      configurado. Comience la captura con Wireshark y chequee la cuenta.de correo de alumnopop
-      para capturar tráfico del protocolo POP. Analice el intercambio del protocolo entre el cliente y el
-      servidor, identificando cada comando y su correspondiente respuesta, realice un gráfico que
-      muestre este intercambio.
+  6. Repita este procedimiento utilizando una cuenta diferente de mail para el
+  campo From:, luego verifique que el correo recibido por el destinatario tenga
+  la cuenta ficticia. Recibiendo mails (Analizando POP e IMAP):
 
-  h. Vuelva a enviar un mensaje a alumnopop@redes.unlp.edu.ar y sin chequear los mensajes con el
-      cliente, Comience la captura y desde una terminal, utilice los comandos del protocolo POP
-      observados en el punto anterior para consultar los mails del usuario alumnopop. lea el contenido
-      del primer mail desde la consola utilizando telnet.
-         Nota: para conectarse al servidor deberá utilizar el comando:
-                                                   telnet mail.redes.unlp.edu.ar 110
+  7. Vuelva a enviar un correo a alumnopop@redes.unlp.edu.ar utilizando el
+  cliente de correo configurado. Comience la captura con Wireshark y chequee la
+  cuenta.de correo de alumnopop para capturar tráfico del protocolo POP.
+  Analice el intercambio del protocolo entre el cliente y el servidor,
+  identificando cada comando y su correspondiente respuesta, realice un gráfico
+  que muestre este intercambio.
 
-  i. Cierre el telnet y comience una nueva captura. Chequee nuevamente el mail con el cliente
-      configurado. ¿Qué diferencia encuentra entre ambas capturas?
+  8. Vuelva a enviar un mensaje a alumnopop@redes.unlp.edu.ar y sin chequear
+  los mensajes con el cliente, Comience la captura y desde una terminal,
+  utilice los comandos del protocolo POP observados en el punto anterior para
+  consultar los mails del usuario alumnopop. lea el contenido del primer mail
+  desde la consola utilizando telnet.
 
-  j. Con el rol de administrador del sistema (root), ejecute el cliente de correos. Para esto, abra una
-      consola de comandos y ejecute: sudo icedove
+    ```
+    Nota: para conectarse al servidor deberá utilizar el comando: telnet
+    mail.redes.unlp.edu.ar 110
+    ```
 
-      De esta forma, ud. iniciará el cliente de correo con el perfil del superusuario (diferente del usuario
-      con el que configuró las cuentas antes mencionadas). Recuerde que la contraseña del usuario root
-      es lihuen.
+  9. Cierre el telnet y comience una nueva captura. Chequee nuevamente el mail
+  con el cliente configurado. ¿Qué diferencia encuentra entre ambas capturas?
 
-      Luego configure las cuentas pop e imap de los usuarios alumnopop y alumnoimap como se
-      describió anteriormente pero desde el cliente de correos del usuario root
+  10. Con el rol de administrador del sistema (root), ejecute el cliente de
+  correos. Para esto, abra una consola de comandos y ejecute: sudo icedove
 
-      ¿Qué diferencias observa entre el servicio ofrecido por POP vs el ofrecido por IMAP?
+  De esta forma, ud. iniciará el cliente de correo con el perfil del
+  superusuario (diferente del usuario con el que configuró las cuentas antes
+  mencionadas). Recuerde que la contraseña del usuario root es lihuen.
 
-26. Relacione DNS con SMTP. Describa el proceso completo para el envío de un correo desde
-    pepe@yahoo.com a jose@hotmail.com.
+  Luego configure las cuentas pop e imap de los usuarios alumnopop y alumnoimap
+  como se describió anteriormente pero desde el cliente de correos del usuario
+  root
+
+  ¿Qué diferencias observa entre el servicio ofrecido por POP vs el ofrecido
+  por IMAP?
+
+26. Relacione DNS con SMTP. Describa el proceso completo para el envío de un
+correo desde pepe@yahoo.com a jose@hotmail.com.
 
   ```
   Ayuda: Tenga en cuenta al analizar dicho proceso, como hace el servidor de
   correo del usuario que manda el correo electrónico, para identificar el
   servidor de correo al que debería enviar el correo. El proceder de las
-  comunicaciones tiene un parecido al ejercicio en el que se describe cómo viaja
-  una carta postal desde el origen al destino.
+  comunicaciones tiene un parecido al ejercicio en el que se describe cómo
+  viaja una carta postal desde el origen al destino.
   ```
