@@ -143,16 +143,23 @@ o protocolo de Internet.
 14. Compare el modelo OSI con la implementación TCP/IP.
 
   Capa           | Funcion
-  ---------------|-------------------------------------------------------------------------------------------------------------------|-------------------------------------------------
-  Aplicacion     | servicios de red a los usuarios y a procesos, aplicaciones.                                                       |
-  Presentation   | Representacion de datos y encripcion (formato de los datos.)                                                      |
-  Sesion         | Comunicacion entre hosts (mantener track de sesiones de la aplicacion.)                                           |
-  Transporte     | Conexion entre terminales y fiabilidad                                                                            | proveen envio de datos de forma confiable.
-  Red            | Determinacion de camino y IP (Direccionamiento logico)                                                            | controlan el envio fisico de los mensajes sobre la red.
-                 | (direccionar y rutear los mensajes host-to-host. Comunicar varias redes.)                                         |
-  Enlace         | comunicacion entre entes directamente conectados. Comunicar una misma red. Acceso al Medio.                       |
-  Fisica         | transportar la informacion como señal por el medio fisico. Caracteristicas fisicas. Informacion binaria, digital. |
+  ---------------|-------------------------------------------------------------------------------------------------------------------
+  Aplicacion     | servicios de red a los usuarios y a procesos, aplicaciones.
+  Presentation   | Representacion de datos y encripcion (formato de los datos.)
+  Sesion         | Comunicacion entre hosts (mantener track de sesiones de la aplicacion.)
+  Transporte     | Conexion entre terminales y fiabilidad
+  Red            | Determinacion de camino y IP (Direccionamiento logico)
+                 | (direccionar y rutear los mensajes host-to-host. Comunicar varias redes.)
+  Enlace         | comunicacion entre entes directamente conectados. Comunicar una misma red. Acceso al Medio.
+  Fisica         | transportar la informacion como señal por el medio fisico. Caracteristicas fisicas. Informacion binaria, digital.
 
+
+
+
+  Capas                                              | Servicios
+  -------------------------------------------------- | --------------------------------------------------------
+  Aplicacion, Presentation, Sesion, Transporte, Red  | proveen envio de datos de forma confiable.
+  Enlace, Fisica                                     | controlan el envio fisico de los mensajes sobre la red.
 
 Extra
 -----
