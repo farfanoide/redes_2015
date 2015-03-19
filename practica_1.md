@@ -131,7 +131,7 @@ oficina “Ventas”
 o protocolo de Internet.
 
   Capa         | Funcion
-  -------------+-------------------------------------------------------
+  -------------|-------------------------------------------------------
   Aplicacion   | Network process to application
                | Representacion de datos y encripcion
                | Comunicacion entre hosts
@@ -143,7 +143,7 @@ o protocolo de Internet.
 14. Compare el modelo OSI con la implementación TCP/IP.
 
   Capa           | Funcion
-  ---------------+-------------------------------------------------------------------------------------------------------------------+-------------------------------------------------
+  ---------------|-------------------------------------------------------------------------------------------------------------------|-------------------------------------------------
   Aplicacion     | servicios de red a los usuarios y a procesos, aplicaciones.                                                       |
   Presentation   | Representacion de datos y encripcion (formato de los datos.)                                                      |
   Sesion         | Comunicacion entre hosts (mantener track de sesiones de la aplicacion.)                                           |
