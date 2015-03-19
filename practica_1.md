@@ -158,5 +158,5 @@ Extra
 -----
 
   - Cada SA se conecta a un router de borde o gateway, que lo conecta a otros.
-  - Se denominan EGP (Exterior Gateway Protocols) a los protocolos entre
-  - distintos AS (GGP, EGP, BGP).
+    Se denominan EGP (Exterior Gateway Protocols) a los protocolos entre
+    distintos AS (GGP, EGP, BGP).
