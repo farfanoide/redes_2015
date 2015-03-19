@@ -120,7 +120,7 @@ oficina “Ventas”
 
 
    Capa        |  PDU
-  -------------+--------------
+  -------------|--------------
   Aplicacion   | Mensajes
   Transporte   | Segmento
   Red          | Datagrama
