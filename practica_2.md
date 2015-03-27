@@ -14,7 +14,7 @@ Práctica 2 - Capa de Aplicación
 
   1. ¿Cómo podrían comunicarse si están en diferentes máquinas?
 
-    > Utilizan en intercambio de mensajes a través de la red. El proceso emisor
+    > Utilizan el intercambio de mensajes a través de la red. El proceso emisor
     > crea y envía los mensajes, y el receptor los recibe y responde si es
     > apropiado hacerlo. Los protocolos de la capa de aplicación definirán el
     > formato y orden en que deben enviarse esos mensajes, y las acciones a
@@ -167,42 +167,33 @@ con:
     -alias-).
 
 
-11. Utilizando el Live CD, utilice alguno de los siguientes comandos: nslookup, host o dig, para obtener:
+11. Utilizando el Live CD, utilice alguno de los siguientes comandos: nslookup,
+host o dig, para obtener:
 
   1. La dirección de Internet del host www.redes.unlp.edu.ar
 
     ```bash
-    nslookup info.unlp.edu.ar # porque redes.unlp.edu.ar no existe, conchituma!
+    host www.redes.unlp.edu.ar
     ```
     ```
-    #=> Server:         192.168.43.1
-    #=> Address:        192.168.43.1#53
-
-    #=> Non-authoritative answer:
-    #=> Name:   info.unlp.edu.ar
-    #=> Address: 163.10.5.91
+    #=> www.redes.unlp.edu.ar has address: 127.0.0.1
     ```
-    > La direccion es 163.10.5.91
 
   2. La dirección de Internet o el hostname del servidor de DNS del dominio redes.unlp.edu.ar
 
     ```bash
-    dig info.unlp.edu.ar -t NS
+    dig www.redes.unlp.edu.ar -t NS
     ```
     ```
-    #=> info.unlp.edu.ar.       85777   IN      NS      anubis.unlp.edu.ar.
-    #=> info.unlp.edu.ar.       85777   IN      NS      ada.info.unlp.edu.ar.
-    #=> info.unlp.edu.ar.       85777   IN      NS      mail.linti.unlp.edu.ar.
+    ;; SERVER: 127.0.0.1#53
     ```
 
   3. La dirección de Internet o el hostname del servidor de correo del dominio redes.unlp.edu.ar
     ```bash
-    dig info.unlp.edu.ar -t MX
+    dig www.redes.unlp.edu.ar -t MX
     ```
     ```
-    #=> ada.info.unlp.edu.ar.   86400   IN      MX      10 ada.info.unlp.edu.ar.
-    #=> ada.info.unlp.edu.ar.   86400   IN      MX      20 anubis.unlp.edu.ar.
-    #=> ada.info.unlp.edu.ar.   86400   IN      MX      30 mail.linti.unlp.edu.ar.
+    ;; SERVER: 127.0.0.1#53
     ```
 
 12. Para realizar el siguiente ejercicio va a necesitar que el LiveCD tenga
@@ -212,37 +203,111 @@ conexión a Internet.
 Realice consultas de DNS para averiguar, ya sea con el comando dig, host o
 nslookup los siguientes datos:
 
-  1. La cantidad de servidores de mail que aceptan correo para el dominio gmail.com: ¿___?
+  1. La cantidad de servidores de mail que aceptan correo para el dominio
+  gmail.com:
 
   ```bash
-  dig gmail.com MX
+  dig gmail.com -t MX
   ```
   ```
-  #=> gmail.com.   1138    IN      MX      30 alt3.gmail-smtp-in.l.google.com.
-  #=> gmail.com.   1138    IN      MX      10 alt1.gmail-smtp-in.l.google.com.
-  #=> gmail.com.   1138    IN      MX      40 alt4.gmail-smtp-in.l.google.com.
-  #=> gmail.com.   1138    IN      MX      20 alt2.gmail-smtp-in.l.google.com.
-  #=> gmail.com.   1138    IN      MX      5 gmail-smtp-in.l.google.com.
+  ; <<>> DiG 9.8.3-P1 <<>> gmail.com MX
+  ;; global options: +cmd
+  ;; Got answer:
+  ;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 5893
+  ;; flags: qr rd ra; QUERY: 1, ANSWER: 5, AUTHORITY: 0, ADDITIONAL: 5
+
+  ;; QUESTION SECTION:
+  ;gmail.com.     IN  MX
+
+  ;; ANSWER SECTION:
+  gmail.com.    791 IN  MX  20 alt2.gmail-smtp-in.l.google.com.
+  gmail.com.    791 IN  MX  5  gmail-smtp-in.l.google.com.
+  gmail.com.    791 IN  MX  40 alt4.gmail-smtp-in.l.google.com.
+  gmail.com.    791 IN  MX  10 alt1.gmail-smtp-in.l.google.com.
+  gmail.com.    791 IN  MX  30 alt3.gmail-smtp-in.l.google.com.
+
+  ;; ADDITIONAL SECTION:
+  alt1.gmail-smtp-in.l.google.com. 191 IN A 74.125.206.26
+  alt3.gmail-smtp-in.l.google.com. 235 IN A 74.125.205.27
+  alt2.gmail-smtp-in.l.google.com. 260 IN A 74.125.136.26
+  gmail-smtp-in.l.google.com. 116 IN  A 64.233.186.26
+  alt4.gmail-smtp-in.l.google.com. 181 IN A 74.125.200.27
+
+  ;; Query time: 170 msec
+  ;; SERVER: 192.168.43.1#53(192.168.43.1)
+  ;; WHEN: Thu Mar 26 20:24:44 2015
+  ;; MSG SIZE  rcvd: 230
   ```
   2. El nombre del servidor de correo principal de gmail.com.
 
   > gmail-smtp-in.l.google.com
 
-  3. ¿En que ocasión los demás servidores de correo recibirían correos dirigidos al dominio gmail.com?
-     ¿que sucede luego de que uno de estos servidores recibe un correo para un usuario del dominio,
-     gmail.com en este caso?
+  3. ¿En que ocasión los demás servidores de correo recibirían correos
+  dirigidos al dominio gmail.com?  ¿que sucede luego de que uno de estos
+  servidores recibe un correo para un usuario del dominio, gmail.com en este
+  caso?
 
-     > ni palida idea. ?????
+    > Los servidores alternativos o secundarios recibiran correos en caso de
+    > que los servidores con mayor autoridad no puedan responder
 
-  4. La cantidad de servidores de DNS del dominio unlp.edu.ar: ¿___?
+  4. La cantidad de servidores de DNS del dominio unlp.edu.ar:
+
+    ```bash
+    dig unlp.edu.ar -t NS
+    ```
+
+    ```
+    ; <<>> DiG 9.8.3-P1 <<>> unlp.edu.ar -t NS
+    ;; global options: +cmd
+    ;; Got answer:
+    ;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 26885
+    ;; flags: qr rd ra; QUERY: 1, ANSWER: 3, AUTHORITY: 0, ADDITIONAL: 1
+
+    ;; QUESTION SECTION:
+    ;unlp.edu.ar.     IN  NS
+
+    ;; ANSWER SECTION:
+    unlp.edu.ar.    86400 IN  NS  ns1.riu.edu.ar.
+    unlp.edu.ar.    86400 IN  NS  unlp.unlp.edu.ar.
+    unlp.edu.ar.    86400 IN  NS  anubis.unlp.edu.ar.
+
+    ;; ADDITIONAL SECTION:
+    unlp.unlp.edu.ar. 85768 IN  A 163.10.0.67
+
+    ;; Query time: 77 msec
+    ;; SERVER: 192.168.43.1#53(192.168.43.1)
+    ;; WHEN: Thu Mar 26 20:42:55 2015
+    ;; MSG SIZE  rcvd: 107
+    ```
 
   5. La dirección de Internet del host www.info.unlp.edu.ar
+
+    ```bash
+    host www.info.unlp.edu.ar
+    ```
+    ```
+    #=> www.info.unlp.edu.ar has address 163.10.5.91
+    ```
 
 13. ¿Qué función cumple en Linux/Unix el archivo /etc/hosts o en Windows el archivo
     \WINDOWS\system32\drivers\etc\hosts?
 
-14. Abra el programa Wireshark (as root) para comenzar a capturar el tráfico de
-red en la interfaz de loopback lo. una vez abierto realice una consulta DNS con
+    > El archivo hosts de un ordenador es usado por el sistema operativo para
+    > guardar la correspondencia entre dominios de Internet y direcciones IP.
+    > Este es uno de los diferentes métodos que usa el sistema operativo para
+    > resolver nombres de dominios. Antiguamente cuando no había servidores DNS
+    > que resolvieran los dominios, el archivo hosts era el único encargado de
+    > hacerlo, pero dejó de utilizarse cuando Internet empezó a crecer en
+    > nombres de dominio, pasando a usar servidores de resolución de DNS. En
+    > muchos sistemas operativos este método es usado preferentemente respecto
+    > a otros como el DNS. En la actualidad también es usado para bloquear
+    > contenidos de Internet como la publicidad web.  El archivo hosts es un
+    > archivo de texto plano que puede ser editado por el administrador del
+    > equipo. Este archivo es tradicionalmente llamado "hosts" y su ubicación
+    > depende del sistema operativo.
+
+  14. Abra el programa Wireshark (como root) para comenzar a capturar el tráfico de
+red en la interfaz de loopback lo. Una vez abierto realice una consulta DNS con
 el comando dig para averiguar el registro MX de redes.unlp.edu.ar y luego otra
 para averiguar los registros NS correspondientes a el dominio
 redes.unlp.edu.ar. Analice la información proporcionada por dig y comparelo con
@@ -251,7 +316,8 @@ la captura.
 15. Dada la siguiente situación: "Una PC en una red determinada, con acceso a
 Internet, utiliza los servicios de DNS de un servidor de la red". Analice:
 
-  1. ¿Qué tipo de consultas (iterativas o recursivas) realiza la PC a su servidor de DNS?
+  1. ¿Qué tipo de consultas (iterativas o recursivas) realiza la PC a su
+  servidor de DNS?
 
   2. ¿Qué tipo de consultas (iterativas o recursivas) realiza el servidor de
   DNS para resolver requerimientos de usuario como el anterior? ¿A quién le
@@ -354,14 +420,24 @@ recibidos teniendo en cuenta:
 
     - ¿Qué versión de http ejecuta el servidor?
 
+        > Request Version: HTTP/1.1
+
     - ¿Qué idiomas indica tu navegador al servidor que está dispuesto aceptar
       en la respuesta?
 
+      > Accept-Languague: es-ar,es; q=0.8; en-us; q=0.5; en; q=0.3
+
     - ¿Qué recurso solicitó?
+
+        > Request URI: /
 
     - ¿Cuándo fue modificado por última vez el recurso solicitado?
 
+        > If-Modified-Since: Tue 26 Mar 2013 15:03:53 GMT
+
     - ¿Qué método utilizó: (GET/POST)?
+
+        > GET
 
     - ¿Cuántas cabeceras viajaron en el requerimiento?
 
@@ -520,3 +596,54 @@ correo desde pepe@yahoo.com a jose@hotmail.com.
   comunicaciones tiene un parecido al ejercicio en el que se describe cómo
   viaja una carta postal desde el origen al destino.
   ```
+
+Desafio - Capa de Aplicación
+----------------------------
+
+Realice los siguientes pasos para iniciar el ejercicio  
+
+  - Inicie el LiveCD de modo que el mismo tenga acceso a Internet 
+
+  - Descargue en el LiveCD el archivo publicado en el sitio de la materia. 
+
+  - Abra una terminal de root y vaya al directorio en el que está el archivo descargado
+
+  - Posiblemente al archivo le falten permisos de ejecución. Ejecute lo
+    siguiente para agregárselos:
+    ```bash
+    chmod 755 binario 
+    ```
+  - Ejecute el archivo descargado, para ello debe ejecutar:
+    ```bash
+    ./binario <parametro> 
+    ```
+
+  El parámetro esperado por el binario es el nombre del servidor Web que sirve el sitio de la Secretaría de Extensión de la Facultad de Informática (http://extension.info.unlp.edu.ar)
+
+Si la ejecución del mismo es correcta, deberá recibir en pantalla el siguiente mensaje 
+
+  `"***** El desafío está en marcha *****"`
+ 
+6. Abra un navegador e intente navegar en Internet 
+ 
+Responda: 
+ 
+Es posible navegar correctamente? 
+Pruebe sitios como: 
+ 
+- http://ar.yahoo.com/
+- http://163.10.5.91 
+ 
+¿Qué fue lo que ocurrió? ¿Cómo lo solucionaría? 
+ 
+7. Luego de solucionar el problema, corrobore que los sitios más visitados funcionan 
+correctamente: 
+ 
+- https://www.facebook.com
+- https://www.google.com
+- https://www.gmail.com
+
+Responda: 
+ 
+A. ¿Detectó algún problema? 
+B. ¿Qué debe hacer para solucionarlo? 

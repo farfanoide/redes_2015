@@ -156,7 +156,7 @@ o protocolo de Internet.
 
 
 
-  Capas                                              | Servicios
+  Capas                                              | servicios
   -------------------------------------------------- | --------------------------------------------------------
   Aplicacion, Presentation, Sesion, Transporte, Red  | proveen envio de datos de forma confiable.
   Enlace, Fisica                                     | controlan el envio fisico de los mensajes sobre la red.
