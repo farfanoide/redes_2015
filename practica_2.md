@@ -418,9 +418,11 @@ recibidos teniendo en cuenta:
 
     - ¿Qué versión de http emplea tu navegador?
 
+        > Request Version: HTTP/1.1
+
     - ¿Qué versión de http ejecuta el servidor?
 
-        > Request Version: HTTP/1.1
+        > Response: HTTP/1.1
 
     - ¿Qué idiomas indica tu navegador al servidor que está dispuesto aceptar
       en la respuesta?
@@ -441,10 +443,43 @@ recibidos teniendo en cuenta:
 
     - ¿Cuántas cabeceras viajaron en el requerimiento?
 
+        ```
+        GET / HTTP/1.1
+        Host: www.redes.unlp.edu.ar
+        Connection: keep-alive
+        Cache-Control: max-age=0
+        Accept: application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+        User-Agent: Mozilla/5.0 (X11; U; Linux i686; en-US) AppleWebKit/534.3 (KHTML, like Gecko) Chrome/6.0.472.63 Safari/534.3
+        Accept-Encoding: gzip,deflate,sdch
+        Accept-Language: en-US,en;q=0.8
+        Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.3
+        If-None-Match: "4f9d3-161c-4d8d53acd2840"
+        If-Modified-Since: Tue, 26 Mar 2013 15:03:53 GMT
+        ```
+        > Cantidad de Headers: 11
+
     - ¿Cuál es el código de estado devuelto a tu navegador por el servidor en
       la respuesta? ¿Cuál es el significado de ese código de estado?
 
-    - ¿Cuántas cabeceras viajaron en el respuesta?
+       > El codigo es el 200: OK
+
+    - ¿Cuántas cabeceras viajaron en la respuesta?
+
+      ```bash
+      curl -I www.redes.unlp.edu.ar
+      ```
+      ```
+      HTTP/1.1 200 OK
+      Date: Fri, 27 Mar 2015 03:10:42 GMT
+      Server: Apache/2.2.16 (Debian)
+      Last-Modified: Tue, 26 Mar 2013 15:03:53 GMT
+      ETag: "551cc-161c-4d8d53acd2840"
+      Accept-Ranges: bytes
+      Content-Length: 5660
+      Vary: Accept-Encoding
+      Content-Type: text/html
+      ```
+      > Cantidad de Headers: 9
 
     - ¿Por qué en uno de los requerimientos está presente el encabezado
       `If-Modified-Since`? (Relacionar con el código de la respuesta recibida).
@@ -452,6 +487,8 @@ recibidos teniendo en cuenta:
     - ¿Es posible extraer de la respuesta recibida la página que carga el
       navegador? Verifique en la captura los datos recibidos y compare con el
       código fuente de la página cargada.
+
+        > Si, viene en el body del response como texto plano.
 
 19. Utilizando el Live CD, abra un navegador (Iceweasel) e ingrese a la URL:
 www.redes.unlp.edu.ar/
@@ -475,6 +512,8 @@ www.redes.unlp.edu.ar/
 
   2. Analice el código HTML.
 
+    > Difiere el metodo mediante el cual sera enviado el formulario
+
   3. Utilizando el analizador de paquetes Wireshark capture los paquetes
   enviados y recibidos al presionar el botón Enviar.
 
@@ -482,9 +521,21 @@ www.redes.unlp.edu.ar/
 
   5. ¿Observó alguna diferencia en el browser si se utiliza un mensaje u otro?
 
+    > Al utilizar el metodo GET se ven los parametros en la url, mientras
+      que al utilizar el POST estos se envian en el body del request.
+
 21. Investigue para qué puede ser utilizado el comando curl. Con el mismo,
 determine la versión del servidor web que sirve el sitio
 https://www.google.com/. ¿Qué parámetros del comando utilizó?
+
+    > curl es una herramienta para transferir datos desde o hacia un servidor.
+
+    ```bash
+    curl -sI www.google.com | grep -i server
+    ```
+    ```
+    #=> Server: GFE/2.0
+    ```
 
 22. Relacione DNS con HTTP. ¿Se puede navegar si no hay servicio de DNS?
 
@@ -493,8 +544,26 @@ SMTP, POP e IMAP
 
 23. ¿Qué protocolos se utilizan para el envío y la recepción de mails?
 
+  Uso       | Protocolo
+  ----------|----------------------------------------
+  Envio     | SMTP (Simple Mail Transfer Protocol)
+  Recepcion | IMAP (Internet Message Access Protocol)
+            | POP (Post Office Protocol)
+
+
 24. ¿Qué protocolos se utilizan para la recepción de mails? Enumere y explique
 caracteristicas y diferencias entre las alternativas posibles.
+
+  > IMAP trabaja en modo de conexion permanete, es posible especificar
+    carpetas del lado del sevidor, visualizar mensajes de forma remota.
+    Transmite solo la cabecera del mensaje, dandole la posibilidad al usuario
+    de borrarlo directamente. El almacenamiento local del mensaje es opcional.
+
+  > POP se conecta periodicamente al servidor para buscar nuevo correo, en
+    cada conexion se bajan todos los correos nuevos sin importar si se vayan a
+    leer o no. Por defecto elimina los mensajes del servidor, no permitiendo el
+    acceso a ellos desde otros dispositivos.
+
 
 25. Utilizando el Live CD, abra el cliente de correo (Icedove) y configure:
 
@@ -602,48 +671,62 @@ Desafio - Capa de Aplicación
 
 Realice los siguientes pasos para iniciar el ejercicio  
 
-  - Inicie el LiveCD de modo que el mismo tenga acceso a Internet 
+1. Inicie el LiveCD de modo que el mismo tenga acceso a Internet 
 
-  - Descargue en el LiveCD el archivo publicado en el sitio de la materia. 
+2. Descargue en el LiveCD el archivo publicado en el sitio de la
+materia.
 
-  - Abra una terminal de root y vaya al directorio en el que está el archivo descargado
+3. Abra una terminal de root y vaya al directorio en el que está el
+archivo descargado
 
-  - Posiblemente al archivo le falten permisos de ejecución. Ejecute lo
-    siguiente para agregárselos:
+4. Posiblemente al archivo le falten permisos de ejecución. Ejecute lo
+siguiente para agregárselos:
+
     ```bash
     chmod 755 binario 
     ```
-  - Ejecute el archivo descargado, para ello debe ejecutar:
+
+5. Ejecute el archivo descargado, para ello debe ejecutar:
+
     ```bash
     ./binario <parametro> 
     ```
 
-  El parámetro esperado por el binario es el nombre del servidor Web que sirve el sitio de la Secretaría de Extensión de la Facultad de Informática (http://extension.info.unlp.edu.ar)
+  El parámetro esperado por el binario es el nombre del servidor Web
+  que sirve el sitio de la Secretaría de Extensión de la Facultad de
+  Informática (http://extension.info.unlp.edu.ar)
 
-Si la ejecución del mismo es correcta, deberá recibir en pantalla el siguiente mensaje 
+  Si la ejecución del mismo es correcta, deberá recibir en pantalla el
+  siguiente mensaje
 
-  `"***** El desafío está en marcha *****"`
+  ```
+  "***** El desafío está en marcha *****"
+  ```
  
 6. Abra un navegador e intente navegar en Internet 
  
-Responda: 
+  Responda: 
  
-Es posible navegar correctamente? 
-Pruebe sitios como: 
- 
-- http://ar.yahoo.com/
-- http://163.10.5.91 
- 
-¿Qué fue lo que ocurrió? ¿Cómo lo solucionaría? 
- 
-7. Luego de solucionar el problema, corrobore que los sitios más visitados funcionan 
-correctamente: 
- 
-- https://www.facebook.com
-- https://www.google.com
-- https://www.gmail.com
+  - Es posible navegar correctamente? Pruebe sitios como: 
+    http://ar.yahoo.com/
+    http://163.10.5.91
+  - ¿Qué fue lo que ocurrió? ¿Cómo lo solucionaría?
 
-Responda: 
+    > No, se soluciona configurando un servidor DNS en /etc/resolv.conf
+
+7. Luego de solucionar el problema, corrobore que los sitios más
+visitados funcionan correctamente:
  
-A. ¿Detectó algún problema? 
-B. ¿Qué debe hacer para solucionarlo? 
+  https://www.facebook.com
+  https://www.google.com
+  https://www.gmail.com
+
+  Responda: 
+ 
+  - ¿Detectó algún problema? 
+
+      > google.com no funciona.
+
+  - ¿Qué debe hacer para solucionarlo? 
+
+      > borrando la linea que lo referencia en /etc/hosts
