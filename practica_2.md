@@ -608,8 +608,8 @@ caracteristicas y diferencias entre las alternativas posibles.
   el punto anterior, para enviar un mail al servidor en forma manual.
 
     ```
-    Nota 1: para conectarse al servidor deberá utilizar el comando: telnet
-    mail.redes.unlp.edu.ar 25
+    Nota 1: para conectarse al servidor deberá utilizar el comando: 
+    telnet mail.redes.unlp.edu.ar 25
     ```
     ```
     Nota 2: Verifique que haya recibido el correo en la cuenta a la que haya
@@ -712,7 +712,7 @@ siguiente para agregárselos:
     http://163.10.5.91
   - ¿Qué fue lo que ocurrió? ¿Cómo lo solucionaría?
 
-    > No, se soluciona configurando un servidor DNS en /etc/resolv.conf
+    > No, se soluciona configurando un servidor DNS en /etc/resolv.conf, por e
 
 7. Luego de solucionar el problema, corrobore que los sitios más
 visitados funcionan correctamente:
