@@ -40,7 +40,7 @@ funcionamiento.
   > necesario para enviar información a través de un canal de comunicación.
 
 5. ¿Por qué dos máquinas con distintos sistemas operativos pueden formar parte
-de una misma red?
+   de una misma red?
 
   > Ese es uno de los objetivos de las redes, que las redes físicas
   > heterogéneas que la componen funcionen como una red lógica única.
@@ -48,15 +48,15 @@ de una misma red?
   - standares y protocolos?
 
 6. ¿Cuáles son las 2 categorías en las que pueden clasificarse a los sistemas
-finales o End Systems? Dé un ejemplo del rol de cada uno en alguna aplicación
-distribuida que corra sobre Internet.
+   finales o End Systems? Dé un ejemplo del rol de cada uno en alguna
+   aplicación distribuida que corra sobre Internet.
 
   > Las dos categorias son: cliente y servidor. Un ejemplo de rol del lado del
   > servidor es: un servidor Apache, o un servidor Web y del lado del cliente
   > un browser.
 
 7. Cuál es la diferencia entre una red conmutada de paquetes y una red
-conmutada de circuitos.
+   conmutada de circuitos.
 
   > Cuando se usa un circuito en una red de conmutación de circuitos, se tiene
   > el circuito completo durante todo el tiempo que se esté usando, sin la
@@ -78,27 +78,27 @@ conmutada de circuitos.
   > Una red de internet es una red de conmutacion de paquetes.
 
 9. Dada la siguiente situación: el empleado Pablo Marques que trabaja en la
-oficina “Ventas”
+   oficina “Ventas”
 
   (3er piso) situada en el Edificio de la empresa XX (en BA), envía una carta a
   Mario Pesada, que trabaja en la oficina de Personal de la empresa YY en un
-  edificio ubicado en la ciudad de Madrid, España (en dicho edificio, funciona la
-  empresa YY en los pisos de 1 a 10 y la empresa ZZ en los pisos 11 a 15).
+  edificio ubicado en la ciudad de Madrid, España (en dicho edificio, funciona
+  la empresa YY en los pisos de 1 a 10 y la empresa ZZ en los pisos 11 a 15).
 
   Determine:
 
   1. ¿Cuáles son los pasos necesarios para que la carta llegue desde el origen
-  al destino?
+     al destino?
 
   2. ¿Qué información se usa en cada punto del trayecto para que la carta siga
-  su recorrido?
+     su recorrido?
 
   3. ¿Siempre se usa el mismo transporte?
 
   4. Suponga que la carta está “codificada” usando algún método para que, en el
-  caso de que alguien en el camino abriera el sobre, éste no pueda leer el
-  verdadero contenido de la misma ¿Quiénes deben poseer la información
-  necesario para codificarlo y decodificarlo?
+     caso de que alguien en el camino abriera el sobre, éste no pueda leer el
+     verdadero contenido de la misma ¿Quiénes deben poseer la información
+     necesario para codificarlo y decodificarlo?
 
 10. Describa brevemente las tecnologías de acceso residencial a redes.
 
@@ -128,7 +128,7 @@ oficina “Ventas”
   Fisica       | PDU-1   
 
 13. Describa cuales son las funciones de cada una de las capas del stack TCP/IP
-o protocolo de Internet.
+    o protocolo de Internet.
 
   Capa         | Funcion
   -------------|-------------------------------------------------------

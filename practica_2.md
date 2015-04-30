@@ -26,9 +26,9 @@ Práctica 2 - Capa de Aplicación
     > huésped (uso de señales, memoria compartida...).
 
 3. Explique brevemente cómo es el modelo Cliente/Servidor. De un ejemplo de un
-sistema Cliente/Servidor en la "vida cotidiana" y un ejemplo de un sistema
-informático que siga el modelo Cliente/Servidor. ¿Conoce algún otro modelo de
-comunicación?
+   sistema Cliente/Servidor en la "vida cotidiana" y un ejemplo de un sistema
+   informático que siga el modelo Cliente/Servidor. ¿Conoce algún otro modelo
+   de comunicación?
 
   > En la arquitectura Cliente-Servidor un host cliente se comunica con otro,
   > servidor, enviando solicitudes. Los clientes se comunican sólo con el
@@ -43,7 +43,8 @@ comunicación?
   > híbridos (un servidor coordina algunas tareas y adminsitra las IP cliente,
   > y los clientes se comunican entre ellos tras interactuar con el servidor).
 
-4. Describa la funcionalidad de la entidad genérica "Agente de usuario" o "User agent".
+4. Describa la funcionalidad de la entidad genérica "Agente de usuario" o "User
+   agent".
 
   > Un user agent es la interfaz entre el usuario final y una aplicación de red
   > (por ejemplo, el browser en el caso de la WEB). Implementa la parte cliente
@@ -168,7 +169,7 @@ con:
 
 
 11. Utilizando el Live CD, utilice alguno de los siguientes comandos: nslookup,
-host o dig, para obtener:
+    host o dig, para obtener:
 
   1. La dirección de Internet del host www.redes.unlp.edu.ar
 
@@ -179,7 +180,8 @@ host o dig, para obtener:
     #=> www.redes.unlp.edu.ar has address: 127.0.0.1
     ```
 
-  2. La dirección de Internet o el hostname del servidor de DNS del dominio redes.unlp.edu.ar
+  2. La dirección de Internet o el hostname del servidor de DNS del dominio
+     redes.unlp.edu.ar
 
     ```bash
     dig www.redes.unlp.edu.ar -t NS
@@ -188,7 +190,9 @@ host o dig, para obtener:
     ;; SERVER: 127.0.0.1#53
     ```
 
-  3. La dirección de Internet o el hostname del servidor de correo del dominio redes.unlp.edu.ar
+  3. La dirección de Internet o el hostname del servidor de correo del dominio
+     redes.unlp.edu.ar
+
     ```bash
     dig www.redes.unlp.edu.ar -t MX
     ```
@@ -197,14 +201,13 @@ host o dig, para obtener:
     ```
 
 12. Para realizar el siguiente ejercicio va a necesitar que el LiveCD tenga
-Internet. También puede realizarlo desde una PC que tenga los comandos y
-conexión a Internet.
-
-Realice consultas de DNS para averiguar, ya sea con el comando dig, host o
-nslookup los siguientes datos:
+    Internet. También puede realizarlo desde una PC que tenga los comandos y
+    conexión a Internet.
+    Realice consultas de DNS para averiguar, ya sea con el comando dig, host o
+    nslookup los siguientes datos:
 
   1. La cantidad de servidores de mail que aceptan correo para el dominio
-  gmail.com:
+     gmail.com:
 
   ```bash
   dig gmail.com -t MX
@@ -238,14 +241,15 @@ nslookup los siguientes datos:
   ;; WHEN: Thu Mar 26 20:24:44 2015
   ;; MSG SIZE  rcvd: 230
   ```
+
   2. El nombre del servidor de correo principal de gmail.com.
 
   > gmail-smtp-in.l.google.com
 
   3. ¿En que ocasión los demás servidores de correo recibirían correos
-  dirigidos al dominio gmail.com?  ¿que sucede luego de que uno de estos
-  servidores recibe un correo para un usuario del dominio, gmail.com en este
-  caso?
+     dirigidos al dominio gmail.com?  ¿que sucede luego de que uno de estos
+     servidores recibe un correo para un usuario del dominio, gmail.com en este
+     caso?
 
     > Los servidores alternativos o secundarios recibiran correos en caso de
     > que los servidores con mayor autoridad no puedan responder
@@ -289,8 +293,8 @@ nslookup los siguientes datos:
     #=> www.info.unlp.edu.ar has address 163.10.5.91
     ```
 
-13. ¿Qué función cumple en Linux/Unix el archivo /etc/hosts o en Windows el archivo
-    \WINDOWS\system32\drivers\etc\hosts?
+13. ¿Qué función cumple en Linux/Unix el archivo /etc/hosts o en Windows el
+    archivo \WINDOWS\system32\drivers\etc\hosts?
 
     > El archivo hosts de un ordenador es usado por el sistema operativo para
     > guardar la correspondencia entre dominios de Internet y direcciones IP.
@@ -306,29 +310,29 @@ nslookup los siguientes datos:
     > equipo. Este archivo es tradicionalmente llamado "hosts" y su ubicación
     > depende del sistema operativo.
 
-  14. Abra el programa Wireshark (como root) para comenzar a capturar el tráfico de
-red en la interfaz de loopback lo. Una vez abierto realice una consulta DNS con
-el comando dig para averiguar el registro MX de redes.unlp.edu.ar y luego otra
-para averiguar los registros NS correspondientes a el dominio
-redes.unlp.edu.ar. Analice la información proporcionada por dig y comparelo con
-la captura.
+14. Abra el programa Wireshark (como root) para comenzar a capturar el tráfico
+    de red en la interfaz de loopback lo. Una vez abierto realice una consulta
+    DNS con el comando dig para averiguar el registro MX de redes.unlp.edu.ar y
+    luego otra para averiguar los registros NS correspondientes a el dominio
+    redes.unlp.edu.ar. Analice la información proporcionada por dig y comparelo
+    con la captura.
 
 15. Dada la siguiente situación: "Una PC en una red determinada, con acceso a
-Internet, utiliza los servicios de DNS de un servidor de la red". Analice:
+    Internet, utiliza los servicios de DNS de un servidor de la red". Analice:
 
   1. ¿Qué tipo de consultas (iterativas o recursivas) realiza la PC a su
-  servidor de DNS?
+     servidor de DNS?
 
   2. ¿Qué tipo de consultas (iterativas o recursivas) realiza el servidor de
-  DNS para resolver requerimientos de usuario como el anterior? ¿A quién le
-  realiza estas consultas?
+     DNS para resolver requerimientos de usuario como el anterior? ¿A quién le
+     realiza estas consultas?
 
 HTTP
 ----
 
 16. Defina cada una de las siguientes entidades: Navegador, Servidor WEB,
-Página WEB, HTTP y URL.  ¿Cómo participa cada uno de ellas en la comunicación
-cliente WEB ­ servidor WEB?
+    Página WEB, HTTP y URL.  ¿Cómo participa cada uno de ellas en la
+    comunicación cliente WEB ­ servidor WEB?
 
   - Navegador:
 
@@ -378,8 +382,8 @@ cliente WEB ­ servidor WEB?
   > de HTTP, pero en el caso de la web este es el protocolo utilizado.
 
 18. Utilizando el Live CD, abra un navegador (Iceweasel). Utilizando el
-analizador de paquetes Wireshark (as root) capture los paquetes HTTP enviados y
-recibidos teniendo en cuenta:
+    analizador de paquetes Wireshark (as root) capture los paquetes HTTP
+    enviados y recibidos teniendo en cuenta:
 
   ```
 
@@ -414,7 +418,7 @@ recibidos teniendo en cuenta:
 
 
   1. ¿Cuántos requerimientos realizó el navegador? Para cada par de
-  requerimiento/respuesta responda:
+     requerimiento/respuesta responda:
 
     - ¿Qué versión de http emplea tu navegador?
 
@@ -425,7 +429,7 @@ recibidos teniendo en cuenta:
         > Response: HTTP/1.1
 
     - ¿Qué idiomas indica tu navegador al servidor que está dispuesto aceptar
-      en la respuesta?
+        en la respuesta?
 
       > Accept-Languague: es-ar,es; q=0.8; en-us; q=0.5; en; q=0.3
 
@@ -459,7 +463,7 @@ recibidos teniendo en cuenta:
         > Cantidad de Headers: 11
 
     - ¿Cuál es el código de estado devuelto a tu navegador por el servidor en
-      la respuesta? ¿Cuál es el significado de ese código de estado?
+        la respuesta? ¿Cuál es el significado de ese código de estado?
 
        > El codigo es el 200: OK
 
@@ -491,31 +495,31 @@ recibidos teniendo en cuenta:
         > Si, viene en el body del response como texto plano.
 
 19. Utilizando el Live CD, abra un navegador (Iceweasel) e ingrese a la URL:
-www.redes.unlp.edu.ar/
+    www.redes.unlp.edu.ar/
 
   1. Ingrese al link en la sección "Capa de Aplicación" llamado "Protocolos
-  HTTP". En la página mostrada se visualizan dos nuevos links llamados:
-  Protocolo HTTP/1.1 y Protocolo HTTP/1.0.  Antes de ingresar a estos links
-  continúe con el siguiente punto.
+     HTTP". En la página mostrada se visualizan dos nuevos links llamados:
+     Protocolo HTTP/1.1 y Protocolo HTTP/1.0.  Antes de ingresar a estos links
+     continúe con el siguiente punto.
 
   2. Utilizando el analizador de paquetes Wireshark capture los paquetes
-  enviados y recibidos al presionar sobre el link.
+     enviados y recibidos al presionar sobre el link.
 
   3. Explique la diferencia entre la versión HTTP 1.0 y la versión HTTP 1.1
 
 20. Utilizando el Live CD, abra un navegador en ingrese a la URL:
-www.redes.unlp.edu.ar/
+    www.redes.unlp.edu.ar/
 
-  1. Ingrese al link en la sección "Capa de Aplicación" llamado "Métodos
-  HTTP". En la página mostrada se visualizan dos nuevos links llamados:
-  Método GET y Método POST. Ambos muestran un formulario como el siguiente:
+  1. Ingrese al link en la sección "Capa de Aplicación" llamado "Métodos HTTP".
+     En la página mostrada se visualizan dos nuevos links llamados: Método GET
+     y Método POST. Ambos muestran un formulario como el siguiente:
 
   2. Analice el código HTML.
 
     > Difiere el metodo mediante el cual sera enviado el formulario
 
   3. Utilizando el analizador de paquetes Wireshark capture los paquetes
-  enviados y recibidos al presionar el botón Enviar.
+     enviados y recibidos al presionar el botón Enviar.
 
   4. ¿Qué diferencias detectó en los mensajes enviados por el cliente?
 
@@ -525,8 +529,8 @@ www.redes.unlp.edu.ar/
       que al utilizar el POST estos se envian en el body del request.
 
 21. Investigue para qué puede ser utilizado el comando curl. Con el mismo,
-determine la versión del servidor web que sirve el sitio
-https://www.google.com/. ¿Qué parámetros del comando utilizó?
+    determine la versión del servidor web que sirve el sitio
+    https://www.google.com/. ¿Qué parámetros del comando utilizó?
 
     > curl es una herramienta para transferir datos desde o hacia un servidor.
 
@@ -552,7 +556,7 @@ SMTP, POP e IMAP
 
 
 24. ¿Qué protocolos se utilizan para la recepción de mails? Enumere y explique
-caracteristicas y diferencias entre las alternativas posibles.
+    caracteristicas y diferencias entre las alternativas posibles.
 
   > IMAP trabaja en modo de conexion permanete, es posible especificar
     carpetas del lado del sevidor, visualizar mensajes de forma remota.
@@ -568,7 +572,7 @@ caracteristicas y diferencias entre las alternativas posibles.
 25. Utilizando el Live CD, abra el cliente de correo (Icedove) y configure:
 
   1. Una cuenta de correo POP (Omitir advertencia por uso de conexión sin
-  cifrado)
+     cifrado)
 
   ```
   Cuenta de correo: alumnopop@redes.unlp.edu.ar
@@ -579,7 +583,7 @@ caracteristicas y diferencias entre las alternativas posibles.
   ```
 
   2. Una cuenta de correo IMAP (Omitir advertencia por uso de conexión sin
-  cifrado)
+     cifrado)
 
   ```
   Cuenta de correo: alumnoimap@redes.unlp.edu.ar
@@ -597,18 +601,18 @@ caracteristicas y diferencias entre las alternativas posibles.
   ```
 
   3. Envíe un email desde el cliente de una cuenta a la otra y luego chequee el
-  correo de ambas cuentas.  Enviando mails (Analizando SMTP):
+     correo de ambas cuentas.  Enviando mails (Analizando SMTP):
 
   4. Reitere el proceso de envío, esta vez capturando los paquetes de protocolo
-  SMTP utilizando Wireshark. Analice el intercambio del protocolo entre el
-  cliente y el servidor, identificando cada comando y su correspondiente
-  respuesta, realice un gráfico que muestre este intercambio.
+     SMTP utilizando Wireshark. Analice el intercambio del protocolo entre el
+     cliente y el servidor, identificando cada comando y su correspondiente
+     respuesta, realice un gráfico que muestre este intercambio.
 
   5. Desde una terminal, utilice los comandos del protocolo SMTP observados en
-  el punto anterior, para enviar un mail al servidor en forma manual.
+     el punto anterior, para enviar un mail al servidor en forma manual.
 
     ```
-    Nota 1: para conectarse al servidor deberá utilizar el comando: 
+    Nota 1: para conectarse al servidor deberá utilizar el comando:
     telnet mail.redes.unlp.edu.ar 25
     ```
     ```
@@ -617,21 +621,21 @@ caracteristicas y diferencias entre las alternativas posibles.
     ```
 
   6. Repita este procedimiento utilizando una cuenta diferente de mail para el
-  campo From:, luego verifique que el correo recibido por el destinatario tenga
-  la cuenta ficticia. Recibiendo mails (Analizando POP e IMAP):
+     campo From:, luego verifique que el correo recibido por el destinatario
+     tenga la cuenta ficticia. Recibiendo mails (Analizando POP e IMAP):
 
   7. Vuelva a enviar un correo a alumnopop@redes.unlp.edu.ar utilizando el
-  cliente de correo configurado. Comience la captura con Wireshark y chequee la
-  cuenta.de correo de alumnopop para capturar tráfico del protocolo POP.
-  Analice el intercambio del protocolo entre el cliente y el servidor,
-  identificando cada comando y su correspondiente respuesta, realice un gráfico
-  que muestre este intercambio.
+     cliente de correo configurado. Comience la captura con Wireshark y chequee
+     la cuenta.de correo de alumnopop para capturar tráfico del protocolo POP.
+     Analice el intercambio del protocolo entre el cliente y el servidor,
+     identificando cada comando y su correspondiente respuesta, realice un
+     gráfico que muestre este intercambio.
 
   8. Vuelva a enviar un mensaje a alumnopop@redes.unlp.edu.ar y sin chequear
-  los mensajes con el cliente, Comience la captura y desde una terminal,
-  utilice los comandos del protocolo POP observados en el punto anterior para
-  consultar los mails del usuario alumnopop. lea el contenido del primer mail
-  desde la consola utilizando telnet.
+     los mensajes con el cliente, Comience la captura y desde una terminal,
+     utilice los comandos del protocolo POP observados en el punto anterior
+     para consultar los mails del usuario alumnopop. lea el contenido del
+     primer mail desde la consola utilizando telnet.
 
     ```
     Nota: para conectarse al servidor deberá utilizar el comando: telnet
@@ -639,24 +643,28 @@ caracteristicas y diferencias entre las alternativas posibles.
     ```
 
   9. Cierre el telnet y comience una nueva captura. Chequee nuevamente el mail
-  con el cliente configurado. ¿Qué diferencia encuentra entre ambas capturas?
+     con el cliente configurado. ¿Qué diferencia encuentra entre ambas
+     capturas?
 
   10. Con el rol de administrador del sistema (root), ejecute el cliente de
-  correos. Para esto, abra una consola de comandos y ejecute: sudo icedove
+      correos. Para esto, abra una consola de comandos y ejecute: `sudo
+      icedove`
 
-  De esta forma, ud. iniciará el cliente de correo con el perfil del
-  superusuario (diferente del usuario con el que configuró las cuentas antes
-  mencionadas). Recuerde que la contraseña del usuario root es lihuen.
+      De esta forma, ud. iniciará el cliente de correo con el perfil del
+      superusuario (diferente del usuario con el que configuró las cuentas
+      antes mencionadas). Recuerde que la contraseña del usuario root es
+      lihuen.
 
-  Luego configure las cuentas pop e imap de los usuarios alumnopop y alumnoimap
-  como se describió anteriormente pero desde el cliente de correos del usuario
-  root
+      Luego configure las cuentas pop e imap de los usuarios alumnopop y
+      alumnoimap como se describió anteriormente pero desde el cliente de
+      correos del usuario root
 
-  ¿Qué diferencias observa entre el servicio ofrecido por POP vs el ofrecido
-  por IMAP?
+
+      ¿Qué diferencias observa entre el servicio ofrecido por POP vs el
+      ofrecido por IMAP?
 
 26. Relacione DNS con SMTP. Describa el proceso completo para el envío de un
-correo desde pepe@yahoo.com a jose@hotmail.com.
+    correo desde pepe@yahoo.com a jose@hotmail.com.
 
   ```
   Ayuda: Tenga en cuenta al analizar dicho proceso, como hace el servidor de
@@ -673,14 +681,13 @@ Realice los siguientes pasos para iniciar el ejercicio  
 
 1. Inicie el LiveCD de modo que el mismo tenga acceso a Internet 
 
-2. Descargue en el LiveCD el archivo publicado en el sitio de la
-materia.
+2. Descargue en el LiveCD el archivo publicado en el sitio de la materia.
 
-3. Abra una terminal de root y vaya al directorio en el que está el
-archivo descargado
+3. Abra una terminal de root y vaya al directorio en el que está el archivo
+   descargado
 
 4. Posiblemente al archivo le falten permisos de ejecución. Ejecute lo
-siguiente para agregárselos:
+   siguiente para agregárselos:
 
     ```bash
     chmod 755 binario 
@@ -692,9 +699,9 @@ siguiente para agregárselos:
     ./binario <parametro> 
     ```
 
-  El parámetro esperado por el binario es el nombre del servidor Web
-  que sirve el sitio de la Secretaría de Extensión de la Facultad de
-  Informática (http://extension.info.unlp.edu.ar)
+  El parámetro esperado por el binario es el nombre del servidor Web que sirve
+  el sitio de la Secretaría de Extensión de la Facultad de Informática
+  (http://extension.info.unlp.edu.ar)
 
   Si la ejecución del mismo es correcta, deberá recibir en pantalla el
   siguiente mensaje
