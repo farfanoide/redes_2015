@@ -167,6 +167,8 @@ Capa de Transporte - Redes y comunicaciones ­ 2015
 11. Use CORE para armar una topología como la siguiente, sobre la cual deberá
     realizar:
 
+    ![imagen topografia](img/p3/topografia_core.png)
+
   1. En Servidor, utilice la herramienta ncat para levantar un servicio que
      escuche en el puerto 8001/TCP. Utilice la opcion -k para que el servicio
      sea persistente
@@ -197,13 +199,19 @@ Capa de Transporte - Redes y comunicaciones ­ 2015
     ```
 
 12. De acuerdo a la captura de la siguiente figura, indique los valores de los
-    campos borroneados
+    campos borroneados.
+
+    ![captura wireshark](img/p3/captura_wireshark.png)
 
 13. Dada la sesión TCP de la figura, completar los valores marcados con un
     signo de interrogación
 
+    ![sesion tcp](img/p3/sesion_tcp.png)
+
 14. Completar los datos que faltan en el intercambio de mensajes del siguiente
     diagrama de flujo TCP:
+
+    ![flujo_tcp](img/p3/flujo_tcp.png)
 
 15. Utilizando el Live CD, use Wireshark para capturar paquetes enviados y
     recibidos en cada uno de los siguientes casos. Para ello, arranque la
@@ -381,7 +389,7 @@ Capa de Transporte - Redes y comunicaciones ­ 2015
 
 19. Complete los (?) de la siguiente secuencia Stop and Wait:
 
-  ![ejemplo stop and wait](img/stop_and_wait.png)
+  ![ejemplo stop and wait](img/p3/stop_and_wait.png)
 
 20. Explique la lógica de Go Back – N
 
@@ -409,9 +417,14 @@ Capa de Transporte - Redes y comunicaciones ­ 2015
     Indique en el siguiente gráfico, la numeración de los ACK que el host B envía
     al Host A.
 
+    ![go back n](img/p3/gbn.png)
+
+
 22. Suponiendo Selective Repeat; tamaño de ventana 4 y sabiendo que E indica
     que el mensaje llegó con errores. Indique en el siguiente gráfico, la
     numeración de los ACK que el host B envía al Host A.
+
+    ![Selective Repeat](img/p3/selective_repeat.png)
 
 23. ¿Qué restricción existe sobre el tamaño de ventanas en el protocolo
     Selective Repeat?
