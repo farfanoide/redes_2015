@@ -682,6 +682,7 @@ Realice los siguientes pasos para iniciar el ejercicio  
 1. Inicie el LiveCD de modo que el mismo tenga acceso a Internet 
 
 2. Descargue en el LiveCD el archivo publicado en el sitio de la materia.
+  [binario](src/p2/binario)
 
 3. Abra una terminal de root y vaya al directorio en el que está el archivo
    descargado
